@@ -21,7 +21,7 @@ const images = [
 const findTargetId = document.querySelector("#gallery");
 
 const makeGallery = ({ url, alt }) =>
-  ` <li class =  li-item-gallery><img class = galery-image src="${url}" alt = "${alt}"></li>`;
+  ` <li class =  li-item-gallery><img class = gallery-image src="${url}" alt = "${alt}"></li>`;
 
 const showGallery = images.reduce((acc, image) => acc + makeGallery(image), "");
 
