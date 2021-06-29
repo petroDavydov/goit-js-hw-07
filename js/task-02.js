@@ -14,8 +14,9 @@ const ingredientsEl = ingredients.forEach((ingredient) => {
 
   createTegLi.append(ingredient);
 
-  //   console.log(tegLi);
+  //   console.log(createTegLi.append(ingredient));
+
   const fullIngredientsList = listIngredient.appendChild(createTegLi);
-  //   console.log(fullList);
+  //   console.log(fullIngredientsList);
   return fullIngredientsList;
 });
