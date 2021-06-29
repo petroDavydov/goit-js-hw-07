@@ -1,0 +1,17 @@
+.li-item-gallery {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.galery-image {
+  width: 300px;
+  height: 200px;
+}
+
+#gallery {
+  display: flex;
+}
+
+.image-title{
+	color: black;
+}
