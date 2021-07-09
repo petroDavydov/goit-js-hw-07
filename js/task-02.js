@@ -23,31 +23,31 @@ const ingredients = [
 
 // ==2 variant==
 
+// const ingredientsEl = ingredients.map((ingredient) => {
+//   const listIngredient = document.querySelector("#ingredients");
+
+//   let createTegLi = document.createElement("li");
+
+//   createTegLi.append(ingredient);
+
+//   //   console.log(createTegLi.append(ingredient));
+
+//   const fullIngredientsList = listIngredient.appendChild(createTegLi);
+//   //   console.log(fullIngredientsList);
+//   return fullIngredientsList;
+// });
+
+//   ==3 variant==
+
+const listIngredient = document.querySelector("#ingredients");
+
 const ingredientsEl = ingredients.map((ingredient) => {
-  const listIngredient = document.querySelector("#ingredients");
-
   let createTegLi = document.createElement("li");
-
   createTegLi.append(ingredient);
-
-  //   console.log(createTegLi.append(ingredient));
-
-  const fullIngredientsList = listIngredient.appendChild(createTegLi);
-  //   console.log(fullIngredientsList);
-  return fullIngredientsList;
+  return createTegLi;
 });
 
-//   ==3 variant==найден подобний код но не понят! зачем, там ведь список...
 
-// const ingredientsEl = ingredients.forEach((ingredient) => {
+listIngredient.append(...ingredientsEl);
 
-// 	const listIngredient = document.querySelector("#ingredients");
-
-// 	let createTegLi = document.createElement("li");
-
-// 	createTegLi.innerHTML = ingredient;
-// 	listIngredient.append(createTegLi);
-// 	parent.append(...createTegLi)
-//   });
-
-//   console.log(ingredientsEl);
+console.log(listIngredient);
