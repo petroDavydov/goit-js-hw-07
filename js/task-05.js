@@ -5,15 +5,35 @@ id="name-input" />
 
 //  ==============================
 
-const nameInput = document.querySelector("#name-input");
-// console.log(nameInput);
-const nameOutput = document.querySelector("#name-output");
-// console.log(nameOutput);
+// const nameInput = document.querySelector("#name-input");
+// // console.log(nameInput);
+// const nameOutput = document.querySelector("#name-output");
+// // console.log(nameOutput);
 
-nameInput.oninput = function () {
-  if (nameInput.value === "") {
-    nameOutput.innerHTML = "незнакомец";
+// nameInput.oninput = function () {
+//   if (nameInput.value === "") {
+//     nameOutput.innerHTML = "незнакомец";
+//   } else {
+//     nameOutput.innerHTML = nameInput.value;
+//   }
+// };
+
+// ============================
+
+const nameInput = document.querySelector("#name-input");
+const nameOutput = document.querySelector("#name-output");
+
+nameInput.addEventListener("click", onInput);
+function onInput({ target: { value } }) {
+  if (value.trim() === "") {
+    nameOutput.textContent = "stranger";
   } else {
-    nameOutput.innerHTML = nameInput.value;
+    nameOutput.textContent = value;
   }
-};
+}
+
+value.trim() === ""
+  ? (nameOutput.textContent = "stranger")
+  : (nameOutput.textContent = value);
+
+nameOutput.textContent = value.trim() === "" ? "stranger" : value;

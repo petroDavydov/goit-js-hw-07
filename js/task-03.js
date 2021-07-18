@@ -49,3 +49,27 @@ findTargetId.insertAdjacentHTML("beforeend", showGallery);
 // document
 //   .querySelector("#gallery")
 //   .insertAdjacentHTML("beforeend", ...makeGallery);
+
+
+// ===============
+
+
+const ul = document.querySelector('#gallery');
+
+const createElement = ({url,alt})=>`<li><img src ="${url} alt= "${alt}" width='350'></li>`
+
+const markUp = images.map(createElement).join();
+
+ul.insertAdjacentHTML('beforeend', markUp)
+
+
+// =========================
+
+
+const ul = document.querySelector('#gallery');
+
+const createElement = (acc,{url,alt})=>acc+`<li><img src ="${url} alt= "${alt}" width='350'></li>`
+
+const markUp = images.reduce(createElement,'');
+
+ul.insertAdjacentHTML('beforeend', markUp)

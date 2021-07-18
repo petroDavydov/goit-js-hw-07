@@ -51,3 +51,15 @@ const ingredientsEl = ingredients.map((ingredient) => {
 listIngredient.append(...ingredientsEl);
 
 console.log(listIngredient);
+
+
+// =====================
+
+
+const ulList = document.querySelector("#ingredients");
+const ingredientsEl = ulList.map((el) => {
+  const li = document.createElement("li");
+  li.innerHTML = `<p>${el}</p>`;
+});
+
+ulList.append(...ingredients);

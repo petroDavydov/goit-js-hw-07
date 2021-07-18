@@ -33,30 +33,54 @@
 // }
 // ```
 
-const input = document.querySelector("#validation-input");
-// console.log(input);
+// const input = document.querySelector("#validation-input");
+// // console.log(input);
 
-const inputLength = input.getAttribute("data-length");
-// console.log(inputLength);
+// const inputLength = input.getAttribute("data-length");
+// // console.log(inputLength);
 
-const goodLength = inputLength;
-// console.log(goodLength);
+// const goodLength = inputLength;
+// // console.log(goodLength);
 
-input.addEventListener("blur", count);
+// input.addEventListener("blur", count);
 
-input.oninput = function () {
-  if (
-    input.value.length === parseInt(goodLength) ||
-    input.value.length === "6"
-  ) {
-    input.classList.remove("invalid");
-    input.classList.add("valid");
-  } else if (input.value.length !== goodLength) {
-    input.classList.remove("valid");
-    input.classList.add("invalid");
+// input.oninput = function () {
+//   if (
+//     input.value.length === parseInt(goodLength) ||
+//     input.value.length === "6"
+//   ) {
+//     input.classList.remove("invalid");
+//     input.classList.add("valid");
+//   } else if (input.value.length !== goodLength) {
+//     input.classList.remove("valid");
+//     input.classList.add("invalid");
+//   }
+// };
+
+// function count() {
+//   console.log(input.value.length && input.value);
+// }
+
+// =========================
+
+const inputRef = document.querySelector("#validation-input");
+const inputLength = document.querySelector("#data-length");
+
+inputRef.addEventListener("blur", onInput);
+
+function onInput({ target: { value, dataset } }) {
+  if (value.length === +dataset.length) {
+    toggleClass("valid", "invalid");
+  } else {
+    toggleClass("invalid", "valid");
   }
+}
+
+const toggleClass = (add, rem) => {
+  inputRef.classList.remove(rem);
+  inputRef.classList.add(add);
 };
 
-function count() {
-  console.log(input.value.length && input.value);
-}
+inputRef.value.length === +inputRef.dataset.length
+  ? toggleClass("valid", "invalid")
+  : toggleClass("invalid", "valid");
