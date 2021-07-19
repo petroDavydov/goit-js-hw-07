@@ -39,27 +39,28 @@ const ingredients = [
 
 //   ==3 variant==
 
-const listIngredient = document.querySelector("#ingredients");
+// const listIngredient = document.querySelector("#ingredients");
 
-const ingredientsEl = ingredients.map((ingredient) => {
-  let createTegLi = document.createElement("li");
-  createTegLi.append(ingredient);
-  return createTegLi;
-});
+// const ingredientsEl = ingredients.map((ingredient) => {
+//   let createTegLi = document.createElement("li");
+//   createTegLi.append(ingredient);
+//   return createTegLi;
+// });
 
 
-listIngredient.append(...ingredientsEl);
+// listIngredient.append(...ingredientsEl);
 
-console.log(listIngredient);
+// console.log(listIngredient);
 
 
 // =====================
 
 
 const ulList = document.querySelector("#ingredients");
-const ingredientsEl = ulList.map((el) => {
+const ingredientsEl = ingredients.map((element) => {
   const li = document.createElement("li");
-  li.innerHTML = `<p>${el}</p>`;
+  li.innerHTML = `<p>${element}</p>`;
+return li;
 });
 
-ulList.append(...ingredients);
+ulList.append(...ingredientsEl);
