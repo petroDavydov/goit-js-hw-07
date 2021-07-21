@@ -58,7 +58,7 @@ const ul = document.querySelector('#gallery');
 
 const createElement = ({url,alt})=>`<li><img src ="${url} alt= "${alt}" width='350'></li>`
 
-const markUp = images.map(createElement).join();
+const markUp = images.map(createElement).join('');
 
 ul.insertAdjacentHTML('beforeend', markUp)
 
